@@ -1,24 +1,47 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>测试朗读页面 - 模拟新闻文章</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Safari Listen to Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    button {
+      background-color: #007aff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005bb5;
+    }
+  </style>
 </head>
 <body>
-  <main>
-    <article>
-      <header>
-        <h1>苹果公司宣布新一代 MacBook Pro</h1>
-        <p>2025年5月6日，科技新闻</p>
-      </header>
-      <section>
-        <p>苹果公司今天正式发布了新一代的 MacBook Pro 笔记本电脑，搭载全新 M4 芯片。该芯片基于台积电的 3 纳米工艺制造，性能较前代提升达 40%。</p>
-        <p>新设备将继续提供 14 英寸和 16 英寸两种版本，并首次引入“深空灰钛合金”材质。外观与上代保持一致，但内部散热系统进行了重新设计。</p>
-        <p>在软件层面，macOS 15 将与新硬件深度整合，引入 AI 辅助功能，包括自动文档摘要、智能邮件分类等。</p>
-        <p>苹果表示，新产品将于下周开启预售，并于本月内陆续发货。价格区间在 1,599 美元至 3,499 美元之间。</p>
-        <p>分析师认为，M4 的推出进一步巩固了苹果在笔记本市场的性能优势。</p>
-      </section>
-    </article>
-  </main>
+  <h1>Welcome to the Safari Listen to Page Demo</h1>
+  <p>This is a simple page where Safari can listen to the content and read it aloud.</p>
+  <button id="speakBtn">Click to Read Page</button>
+
+  <script>
+    // Function to speak the content of the page
+    function speakPageContent() {
+      const text = document.body.innerText;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // Event listener for the button click
+    document.getElementById('speakBtn').addEventListener('click', speakPageContent);
+  </script>
 </body>
 </html>
