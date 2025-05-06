@@ -6,42 +6,36 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Safari Listen to Page</title>
+  <title>Safari Listen to Page Demo</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
       padding: 20px;
     }
-    button {
-      background-color: #007aff;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #005bb5;
+    p {
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
   <h1>Welcome to the Safari Listen to Page Demo</h1>
-  <p>This is a simple page where Safari can listen to the content and read it aloud.</p>
-  <button id="speakBtn">Click to Read Page</button>
+  
+  <p>This is a simple page where Safari can listen to the content and read it aloud when selected.</p>
+  
+  <p>To test this feature, select the text on this page and choose "Speak" from the context menu. Safari will read the text aloud to you. You can also control the speaking rate and voice settings in the iOS settings under "Accessibility" -> "Spoken Content" -> "Speech Rate".</p>
+  
+  <h2>How it works</h2>
+  
+  <p>This is how you can make your webpage content accessible to Safari's "Listen to Page" feature.</p>
+  
+  <h3>Additional Information</h3>
+  <p>Safari's built-in "Listen to Page" works by recognizing and reading the text that is part of the page's HTML content. It can read paragraphs, headings, and other text elements.</p>
 
-  <script>
-    // Function to speak the content of the page
-    function speakPageContent() {
-      const text = document.body.innerText;
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'en-US';
-      window.speechSynthesis.speak(utterance);
-    }
-
-    // Event listener for the button click
-    document.getElementById('speakBtn').addEventListener('click', speakPageContent);
-  </script>
+  <h4>Tips for Better Experience:</h4>
+  <ul>
+    <li>Ensure the text is well-structured using proper HTML elements.</li>
+    <li>Enable "Speak Selection" in the iOS settings.</li>
+    <li>Test on an iPhone or iPad with VoiceOver or "Speak Selection" enabled.</li>
+  </ul>
 </body>
 </html>
